@@ -116,9 +116,6 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark/Light Mode" title="Toggle theme">
-          <i class="fas fa-sun" id="themeIcon"></i>
-        </button>
         <a href="#contact" class="btn btn-primary btn-sm">
           <span>Hire Raman</span> <i class="fas fa-arrow-right"></i>
         </a>
@@ -179,7 +176,7 @@
           </div>
         </div>
 
-        <!-- 5-Second Dynamic Creation & Architecture Studio (Replacing Terminal Card) -->
+        <!-- Dynamic Live Creation Studio (One-by-One Animated Real-Time Process, No Stepper) -->
         <div class="hero-pipeline-card" id="creation-studio">
           <div class="pipeline-header">
             <div class="pipeline-dots">
@@ -188,19 +185,19 @@
               <span class="p-dot dot-green"></span>
             </div>
             
-            <!-- 4 Discipline Switcher Pills -->
+            <!-- Discipline Switcher Pills -->
             <div class="pipeline-mode-tabs">
-              <button class="pipe-tab-btn active" data-pipeline="web" title="Website Development Lifecycle">
-                <i class="fas fa-globe"></i> <span>Web Dev</span>
+              <button class="pipe-tab-btn active" data-pipeline="web" title="Website Creation Lifecycle">
+                <i class="fas fa-globe"></i> <span>Website</span>
               </button>
-              <button class="pipe-tab-btn" data-pipeline="app" title="Mobile App Development Lifecycle">
+              <button class="pipe-tab-btn" data-pipeline="app" title="Mobile App Lifecycle">
                 <i class="fas fa-mobile-screen"></i> <span>Mobile App</span>
               </button>
               <button class="pipe-tab-btn" data-pipeline="security" title="Cyber Security Protocol">
                 <i class="fas fa-shield-halved"></i> <span>Security</span>
               </button>
-              <button class="pipe-tab-btn" data-pipeline="marketing" title="Digital Marketing &amp; Growth Engine">
-                <i class="fas fa-chart-line"></i> <span>Marketing</span>
+              <button class="pipe-tab-btn" data-pipeline="marketing" title="Growth Engine">
+                <i class="fas fa-chart-line"></i> <span>Growth</span>
               </button>
             </div>
 
@@ -211,223 +208,246 @@
             </div>
           </div>
 
-          <!-- Pipeline Showcase Stage -->
+          <!-- Showcase Stage -->
           <div class="pipeline-stage">
 
-            <!-- Panel 1: Website Development Lifecycle (Wireframe -> Figma -> Code -> Live Website) -->
+            <!-- Panel 1: Live Animated Website Creation (Continuous 1-Screen Evolution) -->
             <div class="pipeline-panel active" id="pipePanelWeb">
-              <div class="panel-stage-header">
-                <div class="stage-tag"><i class="fas fa-laptop-code text-gradient-gold"></i> Full-Cycle Web Architecture</div>
-                <div class="stage-status"><span class="pulse-gold"></span> Live Creation Engine</div>
-              </div>
-
-              <div class="web-evolution-flow">
-                <!-- Step 1: Wireframe -->
-                <div class="evo-step" data-step="1">
-                  <div class="evo-box wireframe-box">
-                    <div class="wf-header"></div>
-                    <div class="wf-hero-rect"></div>
-                    <div class="wf-cards-grid">
-                      <span></span><span></span><span></span>
-                    </div>
+              <div class="anim-viewport-window">
+                <!-- Browser URL simulation bar -->
+                <div class="anim-browser-topbar">
+                  <div class="anim-browser-url">
+                    <i class="fas fa-lock text-gradient-gold"></i>
+                    <span>https://raman-tiwari.vercel.app/live-saas</span>
                   </div>
-                  <span class="evo-label"><i class="fas fa-pencil-ruler"></i> 1. Wireframe</span>
+                  <div class="anim-status-badge">
+                    <span class="pulse-gold"></span>
+                    <span class="anim-stage-text" id="webStageLabel">Creating Wireframe...</span>
+                  </div>
                 </div>
 
-                <div class="evo-arrow"><i class="fas fa-chevron-right"></i></div>
+                <!-- Single Unified Canvas showing creation in real time -->
+                <div class="anim-creation-canvas" id="webCreationCanvas">
+                  <!-- Navbar element that sketches and polishes -->
+                  <div class="canvas-navbar">
+                    <div class="c-logo-box"></div>
+                    <div class="c-nav-pills"><span></span><span></span><span></span></div>
+                    <div class="c-cta-btn"></div>
+                  </div>
 
-                <!-- Step 2: Figma UI Design -->
-                <div class="evo-step" data-step="2">
-                  <div class="evo-box figma-box">
-                    <div class="figma-canvas">
-                      <div class="figma-navbar"></div>
-                      <div class="figma-hero-banner"></div>
-                      <div class="figma-cursor"><i class="fas fa-mouse-pointer"></i></div>
+                  <!-- Hero zone that fills with gradient and typography -->
+                  <div class="canvas-hero-zone">
+                    <div class="c-badge-pill"></div>
+                    <div class="c-headline-bar"></div>
+                    <div class="c-subline-bar"></div>
+                    <div class="c-hero-buttons">
+                      <div class="c-btn-main"></div>
+                      <div class="c-btn-alt"></div>
                     </div>
                   </div>
-                  <span class="evo-label"><i class="fab fa-figma"></i> 2. Figma UI</span>
-                </div>
 
-                <div class="evo-arrow"><i class="fas fa-chevron-right"></i></div>
-
-                <!-- Step 3: HTML / CSS / JS / Laravel Code -->
-                <div class="evo-step" data-step="3">
-                  <div class="evo-box code-box">
-                    <div class="code-editor-sim">
-                      <span class="c-token tag">&lt;div <span class="attr">class</span>=<span class="val">"app"</span>&gt;</span>
-                      <span class="c-token css">.hero { <span class="attr">scale</span>: <span class="num">1.0</span>; }</span>
-                      <span class="c-token js">export const App = () =&gt; ...</span>
+                  <!-- 3 Dynamic Cards that build into place -->
+                  <div class="canvas-cards-row">
+                    <div class="c-live-card card-1">
+                      <div class="c-card-icon"><i class="fab fa-laravel"></i></div>
+                      <div class="c-card-line l-long"></div>
+                      <div class="c-card-line l-short"></div>
+                      <div class="c-card-metric"><span class="metric-num">&lt; 0.4s</span> <span class="metric-lbl">Speed</span></div>
+                    </div>
+                    <div class="c-live-card card-2">
+                      <div class="c-card-icon"><i class="fab fa-react"></i></div>
+                      <div class="c-card-line l-long"></div>
+                      <div class="c-card-line l-short"></div>
+                      <div class="c-card-metric"><span class="metric-num">60 FPS</span> <span class="metric-lbl">Fluid</span></div>
+                    </div>
+                    <div class="c-live-card card-3">
+                      <div class="c-card-icon"><i class="fas fa-bolt"></i></div>
+                      <div class="c-card-line l-long"></div>
+                      <div class="c-card-line l-short"></div>
+                      <div class="c-card-metric"><span class="metric-num">100/100</span> <span class="metric-lbl">SEO</span></div>
                     </div>
                   </div>
-                  <span class="evo-label"><i class="fas fa-code"></i> 3. Code Engine</span>
-                </div>
 
-                <div class="evo-arrow"><i class="fas fa-chevron-right"></i></div>
-
-                <!-- Step 4: Live Website -->
-                <div class="evo-step" data-step="4">
-                  <div class="evo-box live-site-box">
-                    <div class="live-mini-site">
-                      <div class="live-mini-nav"><span class="dot"></span><span class="bar"></span></div>
-                      <div class="live-mini-content">
-                        <strong class="site-headline">High-Speed SaaS</strong>
-                        <span class="site-badge">100 / 100 SEO</span>
-                      </div>
-                    </div>
+                  <!-- Floating Live Cursor Drafting & Polishing Elements -->
+                  <div class="creation-magic-cursor" id="creationCursor">
+                    <i class="fas fa-location-arrow"></i>
+                    <span class="cursor-tag">Building UI...</span>
                   </div>
-                  <span class="evo-label"><i class="fas fa-rocket"></i> 4. Live Site</span>
+
+                  <!-- Floating Code Compilation HUD -->
+                  <div class="creation-code-hud">
+                    <code>&lt;EnterpriseArchitecture scale="1M+" latency="0.4s" /&gt;</code>
+                  </div>
                 </div>
               </div>
 
               <div class="pipeline-summary-strip">
                 <span class="spec-pill"><i class="fab fa-react"></i> React 19 &amp; Next.js</span>
                 <span class="spec-pill"><i class="fab fa-laravel"></i> Laravel 12 MVC</span>
-                <span class="spec-pill"><i class="fas fa-gauge-high"></i> &lt; 0.6s LCP Fast</span>
-                <span class="spec-pill"><i class="fas fa-check-double"></i> Zero Bloat</span>
+                <span class="spec-pill"><i class="fas fa-gauge-high"></i> &lt; 0.4s LCP Fast</span>
+                <span class="spec-pill"><i class="fas fa-circle-check"></i> Zero Bloat</span>
               </div>
             </div>
 
-            <!-- Panel 2: Mobile App Development (React Native Multi-Screen) -->
+            <!-- Panel 2: Live Animated App Creation (React Native Interactive Device) -->
             <div class="pipeline-panel" id="pipePanelApp">
-              <div class="panel-stage-header">
-                <div class="stage-tag"><i class="fas fa-mobile-screen text-gradient-gold"></i> React Native Multi-Screen App</div>
-                <div class="stage-status"><span class="pulse-gold"></span> 60 FPS Native Physics</div>
-              </div>
-
-              <div class="mobile-screens-carousel">
-                <!-- Screen 1: Splash -->
-                <div class="phone-mini-frame screen-splash">
-                  <div class="phone-mini-notch"></div>
-                  <div class="phone-screen-content splash-center">
-                    <div class="splash-logo"><i class="fab fa-react"></i></div>
-                    <span class="splash-text">Raman App</span>
-                    <div class="splash-spinner"></div>
+              <div class="anim-viewport-window app-viewport-center">
+                <div class="anim-phone-device">
+                  <!-- iPhone Dynamic Island -->
+                  <div class="anim-dynamic-island">
+                    <div class="island-camera"></div>
+                    <div class="island-sensor"></div>
                   </div>
-                  <span class="screen-title">Splash Route</span>
-                </div>
 
-                <!-- Screen 2: Auth / Biometrics -->
-                <div class="phone-mini-frame screen-auth">
-                  <div class="phone-mini-notch"></div>
-                  <div class="phone-screen-content auth-center">
-                    <i class="fas fa-fingerprint bio-icon"></i>
-                    <span class="bio-text">Face ID Authenticated</span>
-                    <div class="btn-mini-login">Access Portal</div>
-                  </div>
-                  <span class="screen-title">Auth &amp; Biometrics</span>
-                </div>
+                  <!-- Phone Screen Animated Flow -->
+                  <div class="anim-phone-screen" id="appCreationScreen">
+                    <!-- Biometric Scanning Ring -->
+                    <div class="app-biometric-scanner">
+                      <div class="bio-pulse-ring"></div>
+                      <i class="fas fa-fingerprint bio-icon"></i>
+                      <span class="bio-status-text">Face ID Authenticated</span>
+                    </div>
 
-                <!-- Screen 3: Live Dashboard & Real-Time Feed -->
-                <div class="phone-mini-frame screen-dash">
-                  <div class="phone-mini-notch"></div>
-                  <div class="phone-screen-content dash-center">
-                    <div class="dash-mini-header"><span>Dashboard</span> <i class="fas fa-bell"></i></div>
-                    <div class="dash-mini-card">
-                      <span class="lbl">Transactions</span>
-                      <strong class="num">$142,500</strong>
+                    <!-- App Header -->
+                    <div class="phone-app-header">
+                      <div class="user-avatar-mini"><i class="fas fa-user-astronaut"></i></div>
+                      <div class="user-greeting">
+                        <span class="g-hello">Welcome back</span>
+                        <strong class="g-name">Raman SaaS Pro</strong>
+                      </div>
+                      <div class="notif-bell-mini"><i class="fas fa-bell"></i><span class="bell-dot"></span></div>
                     </div>
-                    <div class="dash-mini-bar-chart">
-                      <span></span><span></span><span></span><span></span>
-                    </div>
-                  </div>
-                  <span class="screen-title">Live Dashboard</span>
-                </div>
 
-                <!-- Screen 4: Tab Navigation -->
-                <div class="phone-mini-frame screen-tabs">
-                  <div class="phone-mini-notch"></div>
-                  <div class="phone-screen-content tabs-center">
-                    <div class="tab-view-box">
-                      <i class="fas fa-layer-group"></i>
-                      <span>Multi-Stack View</span>
+                    <!-- Fintech / Analytics Balance Card -->
+                    <div class="phone-balance-card">
+                      <span class="bal-label">Live Portfolio</span>
+                      <div class="bal-val">$148,290.00</div>
+                      <div class="bal-trend"><i class="fas fa-arrow-trend-up"></i> +28.4% this week</div>
                     </div>
-                    <div class="phone-mini-tabbar">
-                      <i class="fas fa-home active"></i>
-                      <i class="fas fa-chart-pie"></i>
-                      <i class="fas fa-wallet"></i>
-                      <i class="fas fa-user"></i>
+
+                    <!-- Animated Real-Time Sparkline Chart -->
+                    <div class="phone-chart-wrap">
+                      <div class="spark-bar b1"></div>
+                      <div class="spark-bar b2"></div>
+                      <div class="spark-bar b3"></div>
+                      <div class="spark-bar b4"></div>
+                      <div class="spark-bar b5"></div>
+                      <div class="spark-bar b6"></div>
+                      <div class="spark-bar b7"></div>
+                    </div>
+
+                    <!-- Floating Notification Toast -->
+                    <div class="phone-floating-toast">
+                      <i class="fas fa-circle-check text-gradient-emerald"></i>
+                      <span>Instant Async Transaction Completed</span>
+                    </div>
+
+                    <!-- Phone Bottom Tab Bar -->
+                    <div class="phone-bottom-tabbar">
+                      <div class="p-tab active"><i class="fas fa-house"></i></div>
+                      <div class="p-tab"><i class="fas fa-chart-pie"></i></div>
+                      <div class="p-tab"><i class="fas fa-wallet"></i></div>
+                      <div class="p-tab"><i class="fas fa-gear"></i></div>
                     </div>
                   </div>
-                  <span class="screen-title">iOS &amp; Android Ready</span>
                 </div>
               </div>
 
               <div class="pipeline-summary-strip">
-                <span class="spec-pill"><i class="fab fa-react"></i> React Native / Expo</span>
-                <span class="spec-pill"><i class="fas fa-database"></i> SQLite Offline First</span>
+                <span class="spec-pill"><i class="fab fa-react"></i> React Native iOS &amp; Android</span>
+                <span class="spec-pill"><i class="fas fa-bolt"></i> 60 FPS Reanimated</span>
                 <span class="spec-pill"><i class="fas fa-fingerprint"></i> Biometric Auth</span>
-                <span class="spec-pill"><i class="fas fa-store"></i> App Store Ready</span>
+                <span class="spec-pill"><i class="fas fa-cloud-arrow-down"></i> Offline First</span>
               </div>
             </div>
 
-            <!-- Panel 3: Cyber Security & Fortress Architecture -->
+            <!-- Panel 3: Live Cyber Security Engine -->
             <div class="pipeline-panel" id="pipePanelSecurity">
-              <div class="panel-stage-header">
-                <div class="stage-tag"><i class="fas fa-shield-halved text-gradient-gold"></i> Sovereign Cyber Security Engine</div>
-                <div class="stage-status"><span class="pulse-gold"></span> 100% Zero Breach Record</div>
-              </div>
+              <div class="anim-viewport-window security-viewport-center">
+                <div class="cyber-radar-screen">
+                  <div class="radar-circle-grid">
+                    <div class="rc rc-1"></div>
+                    <div class="rc rc-2"></div>
+                    <div class="rc rc-3"></div>
+                    <div class="rc-sweep-laser"></div>
+                    
+                    <div class="radar-center-shield">
+                      <i class="fas fa-shield-halved shield-glow-icon"></i>
+                      <div class="shield-lock-ring"></div>
+                    </div>
 
-              <div class="security-radar-flow">
-                <div class="sec-stage-card">
-                  <div class="sec-icon"><i class="fas fa-shield-virus"></i></div>
-                  <h4>Penetration &amp; Vulnerability</h4>
-                  <p>Continuous dynamic AST scan, SQL injection &amp; XSS attack surface defense.</p>
-                  <span class="sec-stat-pill text-gradient-emerald">0 Vulnerabilities Found</span>
-                </div>
+                    <div class="threat-node tn-1"><i class="fas fa-circle-check"></i> <span>SSL/TLS 1.3</span></div>
+                    <div class="threat-node tn-2"><i class="fas fa-circle-check"></i> <span>XSS Neutralized</span></div>
+                    <div class="threat-node tn-3"><i class="fas fa-circle-check"></i> <span>0-Day Protected</span></div>
+                    <div class="threat-node tn-4"><i class="fas fa-circle-check"></i> <span>RBAC Verified</span></div>
+                  </div>
 
-                <div class="sec-stage-card">
-                  <div class="sec-icon"><i class="fas fa-lock"></i></div>
-                  <h4>Cryptographic Firewall</h4>
-                  <p>SHA-256 encrypted ledger records, SSL/TLS 1.3, strict HSTS &amp; CORS enforcement.</p>
-                  <span class="sec-stat-pill text-gradient-gold">End-to-End Encryption</span>
-                </div>
-
-                <div class="sec-stage-card">
-                  <div class="sec-icon"><i class="fas fa-user-shield"></i></div>
-                  <h4>Multi-Agent RBAC &amp; Audit</h4>
-                  <p>Granular role permissions with immutable cryptographic audit trail verification.</p>
-                  <span class="sec-stat-pill text-gradient-emerald">Gov-Grade Tested</span>
+                  <div class="cyber-defense-badge">
+                    <span class="pulse-dot-emerald"></span>
+                    <strong>100% Zero-Breach Architecture</strong> · Govt & Police Portals Hardened
+                  </div>
                 </div>
               </div>
 
               <div class="pipeline-summary-strip">
-                <span class="spec-pill"><i class="fas fa-shield-check"></i> Police &amp; Gov Portals Tested</span>
+                <span class="spec-pill"><i class="fas fa-shield-check"></i> Enterprise WAF / DDoS</span>
+                <span class="spec-pill"><i class="fas fa-lock"></i> SHA-256 Ledger</span>
                 <span class="spec-pill"><i class="fas fa-key"></i> OAuth2 / JWT Hardened</span>
-                <span class="spec-pill"><i class="fas fa-server"></i> Cloudflare WAF / AWS Shield</span>
+                <span class="spec-pill"><i class="fas fa-user-lock"></i> Strict RBAC</span>
               </div>
             </div>
 
-            <!-- Panel 4: Digital Marketing & Organic Growth Engine -->
+            <!-- Panel 4: Live Growth & Marketing Engine -->
             <div class="pipeline-panel" id="pipePanelMarketing">
-              <div class="panel-stage-header">
-                <div class="stage-tag"><i class="fas fa-chart-line text-gradient-gold"></i> Digital Marketing &amp; Technical SEO</div>
-                <div class="stage-status"><span class="pulse-gold"></span> Verified 340% Growth Surge</div>
-              </div>
+              <div class="anim-viewport-window marketing-viewport-center">
+                <div class="growth-chart-stage">
+                  <div class="growth-header-stats">
+                    <div class="g-stat-box">
+                      <span class="g-lbl">Traffic Growth</span>
+                      <strong class="g-val text-gradient-gold">+340%</strong>
+                    </div>
+                    <div class="g-stat-box">
+                      <span class="g-lbl">Page Load Time</span>
+                      <strong class="g-val text-gradient-emerald">0.4s Cut</strong>
+                    </div>
+                    <div class="g-stat-box">
+                      <span class="g-lbl">SEO Health</span>
+                      <strong class="g-val text-gradient-gold">100 / 100</strong>
+                    </div>
+                  </div>
 
-              <div class="marketing-funnel-grid">
-                <div class="mktg-kpi-card">
-                  <span class="kpi-label">Organic Visibility</span>
-                  <div class="kpi-value text-gradient-gold">+340%</div>
-                  <span class="kpi-sub">Google Page 1 Ranking</span>
-                </div>
+                  <!-- Dynamic SVG Curve that animates -->
+                  <div class="growth-curve-wrap">
+                    <svg class="growth-svg" viewBox="0 0 500 180" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="curveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stop-color="#10b981" />
+                          <stop offset="50%" stop-color="#e5c07b" />
+                          <stop offset="100%" stop-color="#fde68a" />
+                        </linearGradient>
+                        <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stop-color="rgba(229, 192, 123, 0.25)" />
+                          <stop offset="100%" stop-color="rgba(229, 192, 123, 0.0)" />
+                        </linearGradient>
+                      </defs>
+                      <path class="growth-area" d="M 0,160 Q 120,150 200,110 T 350,60 T 500,20 L 500,180 L 0,180 Z" fill="url(#areaGradient)" />
+                      <path class="growth-path" d="M 0,160 Q 120,150 200,110 T 350,60 T 500,20" fill="none" stroke="url(#curveGradient)" stroke-width="4" stroke-linecap="round" />
+                    </svg>
 
-                <div class="mktg-kpi-card">
-                  <span class="kpi-label">High-Traffic Speed</span>
-                  <div class="kpi-value text-gradient-emerald">2.8s Cut</div>
-                  <span class="kpi-sub">Bounce rate drops 45%</span>
-                </div>
-
-                <div class="mktg-kpi-card">
-                  <span class="kpi-label">Conversion Funnel</span>
-                  <div class="kpi-value text-gradient-gold">14.8%</div>
-                  <span class="kpi-sub">High-converting CTA pipeline</span>
+                    <!-- Animated Milestone Points on Curve -->
+                    <div class="growth-point p1"><span class="pt-label">Figma UI</span></div>
+                    <div class="growth-point p2"><span class="pt-label">Speed Opt</span></div>
+                    <div class="growth-point p3"><span class="pt-label">Page 1 SEO</span></div>
+                    <div class="growth-point p4"><span class="pt-label">+340% ROI</span></div>
+                  </div>
                 </div>
               </div>
 
               <div class="pipeline-summary-strip">
-                <span class="spec-pill"><i class="fas fa-search"></i> Technical SEO &amp; Schema JSON-LD</span>
-                <span class="spec-pill"><i class="fas fa-gauge-high"></i> Core Web Vitals 100/100</span>
-                <span class="spec-pill"><i class="fas fa-bullseye"></i> High-Converting Funnel Copy</span>
+                <span class="spec-pill"><i class="fas fa-search"></i> Schema JSON-LD SEO</span>
+                <span class="spec-pill"><i class="fas fa-chart-line"></i> High-Conversion UX</span>
+                <span class="spec-pill"><i class="fas fa-bolt"></i> Core Web Vitals 100</span>
+                <span class="spec-pill"><i class="fas fa-bullseye"></i> High ROI Architecture</span>
               </div>
             </div>
 

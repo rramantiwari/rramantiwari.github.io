@@ -4,7 +4,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
   initMobileMenu();
   initBottomMobileNav();
   initScrollAnimations();
@@ -16,46 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initSmoothScroll();
 });
-
-/* ==========================================================================
-   1. THEME SWITCHER (DARK / LIGHT WITH LOCAL STORAGE)
-   ========================================================================== */
-function initTheme() {
-  const themeToggleBtn = document.getElementById('themeToggleBtn');
-  const currentTheme = localStorage.getItem('rt_theme') || 'dark';
-
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  updateThemeIcon(currentTheme);
-
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      const activeTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = activeTheme === 'light' ? 'dark' : 'light';
-      
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('rt_theme', newTheme);
-      updateThemeIcon(newTheme);
-      showToast(`Switched to ${newTheme} mode`);
-    });
-  }
-}
-
-function updateThemeIcon(theme) {
-  const themeIcon = document.getElementById('themeIcon');
-  const metaThemeColor = document.getElementById('metaThemeColor');
-
-  if (metaThemeColor) {
-    metaThemeColor.setAttribute('content', theme === 'light' ? '#ffffff' : '#07090e');
-  }
-
-  if (!themeIcon) return;
-  
-  if (theme === 'light') {
-    themeIcon.className = 'fas fa-moon';
-  } else {
-    themeIcon.className = 'fas fa-sun';
-  }
-}
 
 /* ==========================================================================
    2. MOBILE NAVIGATION MENU
@@ -638,36 +597,102 @@ function initPipelineStudio() {
     }
   }
 
+  let webStageTimeout1 = null;
+  let webStageTimeout2 = null;
+  let webStageTimeout3 = null;
+
   function triggerPanelMicroAnimations(modeKey) {
     if (modeKey === 'web') {
-      const steps = studio.querySelectorAll('.evo-step');
-      steps.forEach((step, idx) => {
-        step.style.animation = 'none';
-        step.offsetHeight; // trigger reflow
-        step.style.animation = `subtlePulse 0.5s ease ${idx * 0.15}s forwards`;
+      const stageLabel = document.getElementById('webStageLabel');
+      const cursor = document.getElementById('creationCursor');
+      const cards = studio.querySelectorAll('.c-live-card');
+      const headline = studio.querySelector('.c-headline-bar');
+      const hud = studio.querySelector('.creation-code-hud');
+
+      clearTimeout(webStageTimeout1);
+      clearTimeout(webStageTimeout2);
+      clearTimeout(webStageTimeout3);
+
+      // Phase 1: Drafting Wireframe (0s)
+      if (stageLabel) stageLabel.textContent = '1. Drafting Wireframe...';
+      if (cursor) {
+        cursor.style.transform = 'translate(20px, 10px)';
+        const cursorTag = cursor.querySelector('.cursor-tag');
+        if (cursorTag) cursorTag.textContent = 'Drafting...';
+      }
+      if (headline) headline.style.background = 'rgba(255,255,255,0.18)';
+      cards.forEach(card => {
+        card.style.opacity = '0.45';
+        card.style.transform = 'scale(0.97)';
       });
+
+      // Phase 2: Styling UI (1.4s)
+      webStageTimeout1 = setTimeout(() => {
+        if (stageLabel) stageLabel.textContent = '2. Styling UI & Layout...';
+        if (cursor) {
+          cursor.style.transform = 'translate(140px, 45px)';
+          const cursorTag = cursor.querySelector('.cursor-tag');
+          if (cursorTag) cursorTag.textContent = 'Styling UI...';
+        }
+        if (headline) headline.style.background = 'linear-gradient(90deg, #fde68a 0%, #e5c07b 50%, #b45309 100%)';
+        cards.forEach((card, idx) => {
+          setTimeout(() => {
+            card.style.opacity = '0.85';
+            card.style.transform = 'scale(1) translateY(-2px)';
+          }, idx * 100);
+        });
+      }, 1400);
+
+      // Phase 3: Code Compilation (2.8s)
+      webStageTimeout2 = setTimeout(() => {
+        if (stageLabel) stageLabel.textContent = '3. Compiling Code Engine...';
+        if (cursor) {
+          cursor.style.transform = 'translate(80px, 90px)';
+          const cursorTag = cursor.querySelector('.cursor-tag');
+          if (cursorTag) cursorTag.textContent = 'Deploying...';
+        }
+        if (hud) {
+          hud.style.boxShadow = '0 0 15px rgba(229, 192, 123, 0.5)';
+        }
+      }, 2800);
+
+      // Phase 4: Production Live (3.9s)
+      webStageTimeout3 = setTimeout(() => {
+        if (stageLabel) stageLabel.textContent = '4. Live SaaS Online (0.4s Fast)';
+        if (cursor) {
+          cursor.style.transform = 'translate(190px, 20px)';
+          const cursorTag = cursor.querySelector('.cursor-tag');
+          if (cursorTag) cursorTag.textContent = '100% Ready';
+        }
+        cards.forEach(card => {
+          card.style.opacity = '1';
+          card.style.transform = 'none';
+        });
+      }, 3900);
+
     } else if (modeKey === 'app') {
-      const screens = studio.querySelectorAll('.phone-mini-frame');
-      screens.forEach((scr, idx) => {
-        scr.style.animation = 'none';
-        scr.offsetHeight;
-        scr.style.animation = `subtlePulse 0.6s ease ${idx * 0.12}s forwards`;
+      const bars = studio.querySelectorAll('.spark-bar');
+      const heights = ['40%', '65%', '85%', '50%', '95%', '70%', '100%'];
+      bars.forEach((bar, idx) => {
+        bar.style.height = '15%';
+        setTimeout(() => {
+          bar.style.height = heights[idx % heights.length];
+        }, 150 + idx * 80);
       });
     } else if (modeKey === 'security') {
-      const radar = studio.querySelector('.radar-sweep');
-      if (radar) {
-        radar.style.animation = 'none';
-        radar.offsetHeight;
-        radar.style.animation = 'radarSweep 2s linear infinite';
+      const sweep = studio.querySelector('.rc-sweep-laser');
+      if (sweep) {
+        sweep.style.animation = 'none';
+        sweep.offsetHeight;
+        sweep.style.animation = 'radarSweep 2.5s linear infinite';
       }
     } else if (modeKey === 'marketing') {
-      const bars = studio.querySelectorAll('.funnel-bar');
-      bars.forEach((bar, idx) => {
-        bar.style.transform = 'scaleX(0.7)';
-        setTimeout(() => {
-          bar.style.transform = 'scaleX(1)';
-        }, idx * 100);
-      });
+      const path = studio.querySelector('.growth-path');
+      if (path) {
+        path.style.animation = 'none';
+        path.offsetHeight;
+        path.style.animation = 'drawCurve 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+      }
     }
   }
 
