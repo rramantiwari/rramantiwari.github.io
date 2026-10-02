@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  
+
   <!-- Apple iOS All-Devices Friendly Meta Tags -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -100,16 +100,16 @@
       <a href="#hero" class="nav-brand">
         <span class="brand-badge">RT</span>
         <span>Raman Tiwari</span>
-        <span class="brand-tag"><i class="fas fa-bolt" style="color:var(--accent-cyan); margin-right:4px;"></i>Edge Edition</span>
       </a>
 
       <nav>
         <ul class="nav-links" id="navLinks">
           <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#app-web-dev" class="nav-link">Web &amp; App Dev</a></li>
+          <li><a href="#royal-standards" class="nav-link">Royal Standards</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
           <li><a href="#proposal-generator" class="nav-link">Scope Planner</a></li>
-          <li><a href="#copy-vault" class="nav-link">Pitch Vault</a></li>
           <li><a href="#credentials" class="nav-link">Credentials</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -179,59 +179,269 @@
           </div>
         </div>
 
-        <!-- Hero Terminal Demonstration -->
-        <div class="hero-terminal-card">
-          <div class="terminal-header">
-            <div class="terminal-dots">
-              <span class="terminal-dot dot-red"></span>
-              <span class="terminal-dot dot-yellow"></span>
-              <span class="terminal-dot dot-green"></span>
+        <!-- 5-Second Dynamic Creation & Architecture Studio (Replacing Terminal Card) -->
+        <div class="hero-pipeline-card" id="creation-studio">
+          <div class="pipeline-header">
+            <div class="pipeline-dots">
+              <span class="p-dot dot-red"></span>
+              <span class="p-dot dot-yellow"></span>
+              <span class="p-dot dot-green"></span>
             </div>
-            <span class="terminal-title">raman@cloud-terminal:~$ profile-ledger</span>
-            <i class="fas fa-shield-check" style="color: var(--accent-emerald);"></i>
+            
+            <!-- 4 Discipline Switcher Pills -->
+            <div class="pipeline-mode-tabs">
+              <button class="pipe-tab-btn active" data-pipeline="web" title="Website Development Lifecycle">
+                <i class="fas fa-globe"></i> <span>Web Dev</span>
+              </button>
+              <button class="pipe-tab-btn" data-pipeline="app" title="Mobile App Development Lifecycle">
+                <i class="fas fa-mobile-screen"></i> <span>Mobile App</span>
+              </button>
+              <button class="pipe-tab-btn" data-pipeline="security" title="Cyber Security Protocol">
+                <i class="fas fa-shield-halved"></i> <span>Security</span>
+              </button>
+              <button class="pipe-tab-btn" data-pipeline="marketing" title="Digital Marketing &amp; Growth Engine">
+                <i class="fas fa-chart-line"></i> <span>Marketing</span>
+              </button>
+            </div>
+
+            <!-- Auto-cycling 5s Progress Bar -->
+            <div class="pipeline-cycle-timer" title="Auto-cycles every 5 seconds">
+              <span class="timer-tag">5s</span>
+              <div class="timer-track"><div class="timer-fill" id="pipelineTimerFill"></div></div>
+            </div>
           </div>
 
-          <div class="terminal-body">
-            <div class="code-line">
-              <span class="prompt-sym">❯</span>
-              <span>curl -s https://raman-tiwari.vercel.app/api/status</span>
-            </div>
-            <div class="code-line">
-              <span class="code-key">"engineer"</span>: <span class="code-str">"Revatiraman Tiwari (Raman)"</span>,
-            </div>
-            <div class="code-line">
-              <span class="code-key">"experience"</span>: <span class="code-str">"6+ Years Production"</span>,
-            </div>
-            <div class="code-line">
-              <span class="code-key">"specialization"</span>: <span class="code-str">"Laravel 6-12, React.js, Redis,
-                Agentic AI"</span>,
-            </div>
-            <div class="code-line">
-              <span class="code-key">"high_traffic_proof"</span>: <span class="code-str">"ORF Online (1M+ users, 10K+
-                posts, 2-3s cut)"</span>,
-            </div>
-            <div class="code-line">
-              <span class="code-key">"fintech_proof"</span>: <span class="code-str">"SalaryNow Async Loan Queue (100+
-                agents)"</span>,
-            </div>
-            <div class="code-line">
-              <span class="code-key">"clients_served"</span>: [<span class="code-str">"Civil Gov Portals"</span>, <span
-                class="code-str">"Parle Products"</span>, <span class="code-str">"Rolex/Tudor Retail"</span>, <span
-                class="code-str">"Amity Univ"</span>],
-            </div>
-            <div class="code-line">
-              <span class="code-key">"availability"</span>: <span class="code-bool">true</span>,
-            </div>
-            <div class="code-line">
-              <span class="code-key">"satisfaction_guarantee"</span>: <span class="code-str">"Clean architecture beats
-                clever hacks"</span>
+          <!-- Pipeline Showcase Stage -->
+          <div class="pipeline-stage">
+
+            <!-- Panel 1: Website Development Lifecycle (Wireframe -> Figma -> Code -> Live Website) -->
+            <div class="pipeline-panel active" id="pipePanelWeb">
+              <div class="panel-stage-header">
+                <div class="stage-tag"><i class="fas fa-laptop-code text-gradient-gold"></i> Full-Cycle Web Architecture</div>
+                <div class="stage-status"><span class="pulse-gold"></span> Live Creation Engine</div>
+              </div>
+
+              <div class="web-evolution-flow">
+                <!-- Step 1: Wireframe -->
+                <div class="evo-step" data-step="1">
+                  <div class="evo-box wireframe-box">
+                    <div class="wf-header"></div>
+                    <div class="wf-hero-rect"></div>
+                    <div class="wf-cards-grid">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                  <span class="evo-label"><i class="fas fa-pencil-ruler"></i> 1. Wireframe</span>
+                </div>
+
+                <div class="evo-arrow"><i class="fas fa-chevron-right"></i></div>
+
+                <!-- Step 2: Figma UI Design -->
+                <div class="evo-step" data-step="2">
+                  <div class="evo-box figma-box">
+                    <div class="figma-canvas">
+                      <div class="figma-navbar"></div>
+                      <div class="figma-hero-banner"></div>
+                      <div class="figma-cursor"><i class="fas fa-mouse-pointer"></i></div>
+                    </div>
+                  </div>
+                  <span class="evo-label"><i class="fab fa-figma"></i> 2. Figma UI</span>
+                </div>
+
+                <div class="evo-arrow"><i class="fas fa-chevron-right"></i></div>
+
+                <!-- Step 3: HTML / CSS / JS / Laravel Code -->
+                <div class="evo-step" data-step="3">
+                  <div class="evo-box code-box">
+                    <div class="code-editor-sim">
+                      <span class="c-token tag">&lt;div <span class="attr">class</span>=<span class="val">"app"</span>&gt;</span>
+                      <span class="c-token css">.hero { <span class="attr">scale</span>: <span class="num">1.0</span>; }</span>
+                      <span class="c-token js">export const App = () =&gt; ...</span>
+                    </div>
+                  </div>
+                  <span class="evo-label"><i class="fas fa-code"></i> 3. Code Engine</span>
+                </div>
+
+                <div class="evo-arrow"><i class="fas fa-chevron-right"></i></div>
+
+                <!-- Step 4: Live Website -->
+                <div class="evo-step" data-step="4">
+                  <div class="evo-box live-site-box">
+                    <div class="live-mini-site">
+                      <div class="live-mini-nav"><span class="dot"></span><span class="bar"></span></div>
+                      <div class="live-mini-content">
+                        <strong class="site-headline">High-Speed SaaS</strong>
+                        <span class="site-badge">100 / 100 SEO</span>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="evo-label"><i class="fas fa-rocket"></i> 4. Live Site</span>
+                </div>
+              </div>
+
+              <div class="pipeline-summary-strip">
+                <span class="spec-pill"><i class="fab fa-react"></i> React 19 &amp; Next.js</span>
+                <span class="spec-pill"><i class="fab fa-laravel"></i> Laravel 12 MVC</span>
+                <span class="spec-pill"><i class="fas fa-gauge-high"></i> &lt; 0.6s LCP Fast</span>
+                <span class="spec-pill"><i class="fas fa-check-double"></i> Zero Bloat</span>
+              </div>
             </div>
 
-            <div class="terminal-highlight-box">
-              <i class="fas fa-check-circle" style="color: var(--accent-emerald);"></i>
-              <span><strong>Ready to Onboard:</strong> Delivering well-documented, tested code with clear weekly
-                milestones.</span>
+            <!-- Panel 2: Mobile App Development (React Native Multi-Screen) -->
+            <div class="pipeline-panel" id="pipePanelApp">
+              <div class="panel-stage-header">
+                <div class="stage-tag"><i class="fas fa-mobile-screen text-gradient-gold"></i> React Native Multi-Screen App</div>
+                <div class="stage-status"><span class="pulse-gold"></span> 60 FPS Native Physics</div>
+              </div>
+
+              <div class="mobile-screens-carousel">
+                <!-- Screen 1: Splash -->
+                <div class="phone-mini-frame screen-splash">
+                  <div class="phone-mini-notch"></div>
+                  <div class="phone-screen-content splash-center">
+                    <div class="splash-logo"><i class="fab fa-react"></i></div>
+                    <span class="splash-text">Raman App</span>
+                    <div class="splash-spinner"></div>
+                  </div>
+                  <span class="screen-title">Splash Route</span>
+                </div>
+
+                <!-- Screen 2: Auth / Biometrics -->
+                <div class="phone-mini-frame screen-auth">
+                  <div class="phone-mini-notch"></div>
+                  <div class="phone-screen-content auth-center">
+                    <i class="fas fa-fingerprint bio-icon"></i>
+                    <span class="bio-text">Face ID Authenticated</span>
+                    <div class="btn-mini-login">Access Portal</div>
+                  </div>
+                  <span class="screen-title">Auth &amp; Biometrics</span>
+                </div>
+
+                <!-- Screen 3: Live Dashboard & Real-Time Feed -->
+                <div class="phone-mini-frame screen-dash">
+                  <div class="phone-mini-notch"></div>
+                  <div class="phone-screen-content dash-center">
+                    <div class="dash-mini-header"><span>Dashboard</span> <i class="fas fa-bell"></i></div>
+                    <div class="dash-mini-card">
+                      <span class="lbl">Transactions</span>
+                      <strong class="num">$142,500</strong>
+                    </div>
+                    <div class="dash-mini-bar-chart">
+                      <span></span><span></span><span></span><span></span>
+                    </div>
+                  </div>
+                  <span class="screen-title">Live Dashboard</span>
+                </div>
+
+                <!-- Screen 4: Tab Navigation -->
+                <div class="phone-mini-frame screen-tabs">
+                  <div class="phone-mini-notch"></div>
+                  <div class="phone-screen-content tabs-center">
+                    <div class="tab-view-box">
+                      <i class="fas fa-layer-group"></i>
+                      <span>Multi-Stack View</span>
+                    </div>
+                    <div class="phone-mini-tabbar">
+                      <i class="fas fa-home active"></i>
+                      <i class="fas fa-chart-pie"></i>
+                      <i class="fas fa-wallet"></i>
+                      <i class="fas fa-user"></i>
+                    </div>
+                  </div>
+                  <span class="screen-title">iOS &amp; Android Ready</span>
+                </div>
+              </div>
+
+              <div class="pipeline-summary-strip">
+                <span class="spec-pill"><i class="fab fa-react"></i> React Native / Expo</span>
+                <span class="spec-pill"><i class="fas fa-database"></i> SQLite Offline First</span>
+                <span class="spec-pill"><i class="fas fa-fingerprint"></i> Biometric Auth</span>
+                <span class="spec-pill"><i class="fas fa-store"></i> App Store Ready</span>
+              </div>
             </div>
+
+            <!-- Panel 3: Cyber Security & Fortress Architecture -->
+            <div class="pipeline-panel" id="pipePanelSecurity">
+              <div class="panel-stage-header">
+                <div class="stage-tag"><i class="fas fa-shield-halved text-gradient-gold"></i> Sovereign Cyber Security Engine</div>
+                <div class="stage-status"><span class="pulse-gold"></span> 100% Zero Breach Record</div>
+              </div>
+
+              <div class="security-radar-flow">
+                <div class="sec-stage-card">
+                  <div class="sec-icon"><i class="fas fa-shield-virus"></i></div>
+                  <h4>Penetration &amp; Vulnerability</h4>
+                  <p>Continuous dynamic AST scan, SQL injection &amp; XSS attack surface defense.</p>
+                  <span class="sec-stat-pill text-gradient-emerald">0 Vulnerabilities Found</span>
+                </div>
+
+                <div class="sec-stage-card">
+                  <div class="sec-icon"><i class="fas fa-lock"></i></div>
+                  <h4>Cryptographic Firewall</h4>
+                  <p>SHA-256 encrypted ledger records, SSL/TLS 1.3, strict HSTS &amp; CORS enforcement.</p>
+                  <span class="sec-stat-pill text-gradient-gold">End-to-End Encryption</span>
+                </div>
+
+                <div class="sec-stage-card">
+                  <div class="sec-icon"><i class="fas fa-user-shield"></i></div>
+                  <h4>Multi-Agent RBAC &amp; Audit</h4>
+                  <p>Granular role permissions with immutable cryptographic audit trail verification.</p>
+                  <span class="sec-stat-pill text-gradient-emerald">Gov-Grade Tested</span>
+                </div>
+              </div>
+
+              <div class="pipeline-summary-strip">
+                <span class="spec-pill"><i class="fas fa-shield-check"></i> Police &amp; Gov Portals Tested</span>
+                <span class="spec-pill"><i class="fas fa-key"></i> OAuth2 / JWT Hardened</span>
+                <span class="spec-pill"><i class="fas fa-server"></i> Cloudflare WAF / AWS Shield</span>
+              </div>
+            </div>
+
+            <!-- Panel 4: Digital Marketing & Organic Growth Engine -->
+            <div class="pipeline-panel" id="pipePanelMarketing">
+              <div class="panel-stage-header">
+                <div class="stage-tag"><i class="fas fa-chart-line text-gradient-gold"></i> Digital Marketing &amp; Technical SEO</div>
+                <div class="stage-status"><span class="pulse-gold"></span> Verified 340% Growth Surge</div>
+              </div>
+
+              <div class="marketing-funnel-grid">
+                <div class="mktg-kpi-card">
+                  <span class="kpi-label">Organic Visibility</span>
+                  <div class="kpi-value text-gradient-gold">+340%</div>
+                  <span class="kpi-sub">Google Page 1 Ranking</span>
+                </div>
+
+                <div class="mktg-kpi-card">
+                  <span class="kpi-label">High-Traffic Speed</span>
+                  <div class="kpi-value text-gradient-emerald">2.8s Cut</div>
+                  <span class="kpi-sub">Bounce rate drops 45%</span>
+                </div>
+
+                <div class="mktg-kpi-card">
+                  <span class="kpi-label">Conversion Funnel</span>
+                  <div class="kpi-value text-gradient-gold">14.8%</div>
+                  <span class="kpi-sub">High-converting CTA pipeline</span>
+                </div>
+              </div>
+
+              <div class="pipeline-summary-strip">
+                <span class="spec-pill"><i class="fas fa-search"></i> Technical SEO &amp; Schema JSON-LD</span>
+                <span class="spec-pill"><i class="fas fa-gauge-high"></i> Core Web Vitals 100/100</span>
+                <span class="spec-pill"><i class="fas fa-bullseye"></i> High-Converting Funnel Copy</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Status Bar -->
+          <div class="pipeline-footer-bar">
+            <div class="engine-live-indicator">
+              <span class="pulse-dot-gold"></span>
+              <span><strong>Engineering Standard:</strong> Zero technical debt · 6+ Years Proven Production Systems</span>
+            </div>
+            <a href="#proposal-generator" class="btn btn-royal-gold btn-sm">
+              <span>Scope Your Project</span> <i class="fas fa-arrow-right"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -263,6 +473,431 @@
           <span class="metric-detail">Verified Laravel engineering badge</span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Interactive Web & App Development Showcase (Dynamic Scroll-Triggered Animation) -->
+  <section class="section web-app-showcase-section" id="app-web-dev">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag"><i class="fas fa-layer-group"></i> Architecture In Motion</span>
+        <h2 class="section-title">Next-Gen <span class="text-gradient">Web & Mobile App Development</span></h2>
+        <p class="section-desc">
+          Engineering high-speed responsive web applications and fluid cross-platform mobile apps. Experience
+          interactive architecture with 60fps animations, sub-second API pipelines, and battle-tested production
+          scalability.
+        </p>
+      </div>
+
+      <!-- Interactive Platform Filter Tabs -->
+      <div class="dev-tabs-wrapper reveal-on-scroll">
+        <div class="dev-tabs">
+          <button class="dev-tab-btn active" data-mode="all" id="btnDevTabAll">
+            <i class="fas fa-cubes"></i> <span>Unified Ecosystem</span>
+          </button>
+          <button class="dev-tab-btn" data-mode="web" id="btnDevTabWeb">
+            <i class="fas fa-laptop-code"></i> <span>Modern Web Architecture</span>
+          </button>
+          <button class="dev-tab-btn" data-mode="app" id="btnDevTabApp">
+            <i class="fas fa-mobile-screen-button"></i> <span>Cross-Platform Mobile</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Dual Stage Animated Showcase -->
+      <div class="dev-showcase-grid">
+
+        <!-- Visual Stage: Desktop & Mobile Device Mockups with Scroll Parallax -->
+        <div class="dev-stage-wrapper reveal-on-scroll stagger-1" id="devStageInteractive">
+          <div class="dev-stage-backdrop"></div>
+
+          <!-- Mockup 1: Responsive Web Application Browser -->
+          <div class="mockup-browser dev-anim-element" id="mockupBrowser">
+            <div class="browser-header">
+              <div class="browser-controls">
+                <span class="ctrl-dot dot-red"></span>
+                <span class="ctrl-dot dot-yellow"></span>
+                <span class="ctrl-dot dot-green"></span>
+              </div>
+              <div class="browser-address-bar">
+                <i class="fas fa-lock" style="color: var(--accent-emerald);"></i>
+                <span class="address-text">https://enterprise-cloud.app/dashboard</span>
+                <span class="live-pill"><span class="pulse-dot"></span> 60 FPS</span>
+              </div>
+              <div class="browser-actions">
+                <span class="badge-subtle"><i class="fas fa-bolt"></i> 12ms API</span>
+              </div>
+            </div>
+
+            <div class="browser-viewport">
+              <!-- Web App Dashboard Interface Simulation -->
+              <div class="browser-app-content">
+                <div class="app-sidebar-mini">
+                  <div class="sidebar-icon active"><i class="fas fa-chart-pie"></i></div>
+                  <div class="sidebar-icon"><i class="fas fa-server"></i></div>
+                  <div class="sidebar-icon"><i class="fas fa-database"></i></div>
+                  <div class="sidebar-icon"><i class="fas fa-shield-halved"></i></div>
+                </div>
+
+                <div class="app-main-pane">
+                  <div class="app-top-stats">
+                    <div class="stat-mini-card">
+                      <span class="mini-label">Throughput</span>
+                      <strong class="mini-val text-gradient-cyan">18.4k req/s</strong>
+                    </div>
+                    <div class="stat-mini-card">
+                      <span class="mini-label">Latency</span>
+                      <strong class="mini-val text-gradient-emerald">1.1ms</strong>
+                    </div>
+                    <div class="stat-mini-card">
+                      <span class="mini-label">Lighthouse</span>
+                      <strong class="mini-val text-gradient">100 / 100</strong>
+                    </div>
+                  </div>
+
+                  <!-- Animated Live Chart Graphic -->
+                  <div class="app-chart-box">
+                    <div class="chart-header-mini">
+                      <span>Real-Time Traffic &amp; Cache Hit Ratio</span>
+                      <span class="badge-cache">98.6% Cached</span>
+                    </div>
+                    <div class="chart-bars-wrap" id="chartBarsWrap">
+                      <div class="chart-bar" style="--bar-h: 42%;"><span class="bar-fill"></span></div>
+                      <div class="chart-bar" style="--bar-h: 68%;"><span class="bar-fill"></span></div>
+                      <div class="chart-bar" style="--bar-h: 85%;"><span class="bar-fill"></span></div>
+                      <div class="chart-bar" style="--bar-h: 55%;"><span class="bar-fill"></span></div>
+                      <div class="chart-bar" style="--bar-h: 92%;"><span class="bar-fill"></span></div>
+                      <div class="chart-bar" style="--bar-h: 76%;"><span class="bar-fill"></span></div>
+                      <div class="chart-bar" style="--bar-h: 100%;"><span class="bar-fill"></span></div>
+                      <div class="chart-bar" style="--bar-h: 88%;"><span class="bar-fill"></span></div>
+                    </div>
+                  </div>
+
+                  <!-- Real-time code execution / web pipeline chip -->
+                  <div class="app-pipeline-strip">
+                    <span class="pipeline-tag"><i class="fab fa-react" style="color:var(--accent-cyan)"></i> React 19
+                      SSR</span>
+                    <span class="pipeline-tag"><i class="fab fa-laravel" style="color:var(--accent-rose)"></i> Laravel
+                      12 API</span>
+                    <span class="pipeline-tag"><i class="fas fa-bolt" style="color:var(--accent-amber)"></i> Redis
+                      Queue</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mockup 2: Floating 3D Mobile Smartphone App (Parallax Overlay on Scroll) -->
+          <div class="mockup-phone dev-anim-element" id="mockupPhone">
+            <div class="phone-speaker-island">
+              <span class="dynamic-island"></span>
+            </div>
+
+            <div class="phone-screen">
+              <div class="phone-status-bar">
+                <span class="phone-time">9:41</span>
+                <div class="phone-icons">
+                  <i class="fas fa-signal"></i>
+                  <i class="fas fa-wifi"></i>
+                  <i class="fas fa-battery-full"></i>
+                </div>
+              </div>
+
+              <!-- Live Push Notification Card (Animated Slide-down on scroll) -->
+              <div class="phone-notification-card" id="phoneNotification">
+                <div class="notif-header">
+                  <span class="notif-app"><i class="fab fa-react" style="color:var(--accent-cyan)"></i> React Native
+                    App</span>
+                  <span class="notif-time">Just now</span>
+                </div>
+                <div class="notif-title">Sync Complete ⚡</div>
+                <div class="notif-body">12,850 records synchronized via offline SQLite pipeline in 0.08s.</div>
+              </div>
+
+              <!-- Mobile Application In-App UI -->
+              <div class="phone-app-body">
+                <div class="phone-user-row">
+                  <div class="phone-avatar">RT</div>
+                  <div>
+                    <div class="phone-greeting">Raman Enterprise App</div>
+                    <div class="phone-sub">Connected • iOS &amp; Android</div>
+                  </div>
+                </div>
+
+                <div class="phone-metric-widget">
+                  <span class="widget-label">Mobile Session FPS</span>
+                  <div class="widget-row">
+                    <span class="widget-val text-gradient-emerald">60.0 FPS</span>
+                    <span class="widget-pill">Silky Smooth</span>
+                  </div>
+                  <div class="widget-progress">
+                    <div class="widget-progress-fill" style="width: 95%;"></div>
+                  </div>
+                </div>
+
+                <div class="phone-stack-chips">
+                  <span class="chip-item"><i class="fab fa-react"></i> React Native</span>
+                  <span class="chip-item"><i class="fas fa-bell"></i> Push FCM</span>
+                  <span class="chip-item"><i class="fas fa-fingerprint"></i> Biometric</span>
+                  <span class="chip-item"><i class="fas fa-cloud-arrow-down"></i> Offline First</span>
+                </div>
+              </div>
+
+              <!-- Phone Bottom Gesture Bar -->
+              <div class="phone-home-indicator"></div>
+            </div>
+          </div>
+
+          <!-- Floating Orbiting Tech Badges -->
+          <div class="floating-badge badge-top-left dev-anim-element">
+            <i class="fab fa-react" style="color:#61dafb;"></i>
+            <span>React.js &amp; Next.js</span>
+          </div>
+          <div class="floating-badge badge-top-right dev-anim-element">
+            <i class="fab fa-laravel" style="color:#f55247;"></i>
+            <span>Laravel 12 REST API</span>
+          </div>
+          <div class="floating-badge badge-bottom-left dev-anim-element">
+            <i class="fas fa-database" style="color:#f59e0b;"></i>
+            <span>Sub-second Redis Layer</span>
+          </div>
+        </div>
+
+        <!-- Architectural Highlights & Capabilities Grid -->
+        <div class="dev-features-wrapper">
+
+          <!-- Web Card -->
+          <div class="dev-feature-card reveal-on-scroll stagger-2 active" data-feature="web">
+            <div class="dev-card-icon-wrap"
+              style="background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.3);">
+              <i class="fas fa-globe text-gradient-cyan"></i>
+            </div>
+            <div class="dev-card-body">
+              <div class="dev-card-head">
+                <h3 class="dev-card-title">High-Velocity Web Architecture</h3>
+                <span class="dev-speed-badge"><i class="fas fa-gauge-high"></i> 100/100 Core Web Vitals</span>
+              </div>
+              <p class="dev-card-text">
+                Architecting bulletproof web applications using React 19, Next.js, and modern Laravel backends.
+                Engineered for instant First Contentful Paint (&lt;0.6s), zero layout shifts, and resilience during
+                millions of monthly page views.
+              </p>
+              <div class="dev-pill-tags">
+                <span class="tag-pill"><i class="fas fa-check"></i> SSR &amp; Edge Caching</span>
+                <span class="tag-pill"><i class="fas fa-check"></i> Modular State &amp; Micro-frontends</span>
+                <span class="tag-pill"><i class="fas fa-check"></i> WCAG Accessibility &amp; Dynamic Dark/Light</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- App Card -->
+          <div class="dev-feature-card reveal-on-scroll stagger-3 active" data-feature="app">
+            <div class="dev-card-icon-wrap"
+              style="background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.3);">
+              <i class="fas fa-mobile-screen-button text-gradient"></i>
+            </div>
+            <div class="dev-card-body">
+              <div class="dev-card-head">
+                <h3 class="dev-card-title">Fluid Cross-Platform Mobile Apps</h3>
+                <span class="dev-speed-badge"><i class="fas fa-wand-magic-sparkles"></i> 60 FPS Native Gestures</span>
+              </div>
+              <p class="dev-card-text">
+                Single codebase mobile applications for iOS &amp; Android built with React Native and Expo. Seamless
+                background syncing, biometric authentication, offline database cache (SQLite/WatermelonDB), and Apple
+                &amp; Google Store ready.
+              </p>
+              <div class="dev-pill-tags">
+                <span class="tag-pill"><i class="fas fa-check"></i> Gesture Handler &amp; Reanimated</span>
+                <span class="tag-pill"><i class="fas fa-check"></i> Silent Push Notifications &amp; WebSockets</span>
+                <span class="tag-pill"><i class="fas fa-check"></i> Offline-First Architecture &amp; Conflict
+                  Resolution</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Synergy & API Sync Card -->
+          <div class="dev-feature-card reveal-on-scroll stagger-4 active" data-feature="all">
+            <div class="dev-card-icon-wrap"
+              style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">
+              <i class="fas fa-network-wired text-gradient-emerald"></i>
+            </div>
+            <div class="dev-card-body">
+              <div class="dev-card-head">
+                <h3 class="dev-card-title">Real-Time Sync &amp; Scalable Backend Engine</h3>
+                <span class="dev-speed-badge"><i class="fas fa-bolt"></i> &lt; 80ms P99 Latency</span>
+              </div>
+              <p class="dev-card-text">
+                Unifying both Web and Mobile platforms under high-throughput Laravel 6-12 RESTful/GraphQL microservices
+                with Redis queues, pub/sub websockets, multi-factor security, and automated CI/CD deployment pipelines
+                on AWS.
+              </p>
+              <div class="dev-pill-tags">
+                <span class="tag-pill"><i class="fas fa-check"></i> Zero-Downtime AWS Deployments</span>
+                <span class="tag-pill"><i class="fas fa-check"></i> JWT / OAuth2 Unified Auth</span>
+                <span class="tag-pill"><i class="fas fa-check"></i> Scaled to 1,000,000+ Concurrent Requests</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Real-Time Metrics Ribbon for App & Web -->
+      <div class="dev-metrics-bar reveal-on-scroll stagger-5">
+        <div class="dev-metric-col">
+          <div class="dev-metric-num text-gradient-cyan" data-counter="60">60 FPS</div>
+          <div class="dev-metric-desc">Fluid Hardware-Accelerated Animations</div>
+        </div>
+        <div class="dev-metric-col">
+          <div class="dev-metric-num text-gradient-emerald" data-counter="150">&lt; 150ms</div>
+          <div class="dev-metric-desc">Global API &amp; State Roundtrip Time</div>
+        </div>
+        <div class="dev-metric-col">
+          <div class="dev-metric-num text-gradient" data-counter="100">100%</div>
+          <div class="dev-metric-desc">Responsive Cross-Device &amp; Retina Ready</div>
+        </div>
+        <div class="dev-metric-col">
+          <div class="dev-metric-num text-gradient-cyan" data-counter="99.99">99.99%</div>
+          <div class="dev-metric-desc">High-Concurrency Production Uptime</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- The Royal Engineering Standards & Architectural Atelier -->
+  <section class="section royal-section" id="royal-standards">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="royal-crest-badge"><i class="fas fa-crown"></i> The Royal Engineering Standard</span>
+        <h2 class="section-title">Bespoke Architecture &amp; <span class="text-gradient-gold">Royalistic Quality</span></h2>
+        <p class="section-desc">
+          Crafted for founders, enterprise leaders, and mission-critical scale-ups. Every codebase is treated with sovereign precision: zero technical debt, mathematically verified PSR-12 purity, and resilience engineered for millions.
+        </p>
+      </div>
+
+      <!-- Royal Architectural Chambers Grid -->
+      <div class="royal-grid">
+
+        <!-- Royal Chamber 1 -->
+        <div class="royal-card reveal-on-scroll stagger-1">
+          <div class="royal-card-top">
+            <div class="royal-card-emblem">
+              <i class="fas fa-chess-king"></i>
+            </div>
+            <span class="royal-seal"><i class="fas fa-certificate"></i> PSR-12 Purity</span>
+          </div>
+          <h3 class="royal-card-title">Sovereign MVC &amp; Microservice Purity</h3>
+          <span class="royal-card-quote">"Code that reads like poetry, scales like titanium."</span>
+          <p class="royal-card-desc">
+            Architected with domain-driven modularity, clean single-responsibility interfaces, and zero architectural spaghetti. Built so that any senior engineer can onboard seamlessly without cognitive overload.
+          </p>
+          <ul class="royal-specs-list">
+            <li><i class="fas fa-gem"></i> Strict PSR-12 code compliance with static PHPStan analysis</li>
+            <li><i class="fas fa-gem"></i> Clean repository &amp; service layer separation pattern</li>
+            <li><i class="fas fa-gem"></i> Complete OpenAPI / Swagger interactive documentation</li>
+          </ul>
+        </div>
+
+        <!-- Royal Chamber 2 -->
+        <div class="royal-card reveal-on-scroll stagger-2">
+          <div class="royal-card-top">
+            <div class="royal-card-emblem">
+              <i class="fas fa-bolt-lightning"></i>
+            </div>
+            <span class="royal-seal"><i class="fas fa-gauge-max"></i> 2.8s Latency Cut</span>
+          </div>
+          <h3 class="royal-card-title">The Imperial Redis &amp; Memory Fortress</h3>
+          <span class="royal-card-quote">"Users will never wait for a struggling database."</span>
+          <p class="royal-card-desc">
+            Deep algorithmic optimization that converts expensive, locking disk I/O into sub-millisecond in-memory lookups. Tested and proven under 1,000,000+ monthly reader traffic surges.
+          </p>
+          <ul class="royal-specs-list">
+            <li><i class="fas fa-gem"></i> Tagged Redis cache invalidation for instant data freshness</li>
+            <li><i class="fas fa-gem"></i> In-memory write buffers preventing MySQL deadlock storms</li>
+            <li><i class="fas fa-gem"></i> Decoupled asynchronous worker queues for intensive jobs</li>
+          </ul>
+        </div>
+
+        <!-- Royal Chamber 3 -->
+        <div class="royal-card reveal-on-scroll stagger-3">
+          <div class="royal-card-top">
+            <div class="royal-card-emblem">
+              <i class="fas fa-shield-halved"></i>
+            </div>
+            <span class="royal-seal"><i class="fas fa-award"></i> Gov-Grade Trust</span>
+          </div>
+          <h3 class="royal-card-title">Fortress Security &amp; Sovereign Portals</h3>
+          <span class="royal-card-quote">"Engineered to national police &amp; fintech audit rigor."</span>
+          <p class="royal-card-desc">
+            Enterprise portals and national administration systems built with tamper-proof cryptographic audit trails, granular multi-tier permission matrices, and zero-compromise data privacy protocols.
+          </p>
+          <ul class="royal-specs-list">
+            <li><i class="fas fa-gem"></i> Proven production portals for National Police &amp; Civil Security</li>
+            <li><i class="fas fa-gem"></i> Multi-stage RBAC approval pipelines with encrypted logs</li>
+            <li><i class="fas fa-gem"></i> 100% zero-breach live production deployment record</li>
+          </ul>
+        </div>
+
+        <!-- Royal Chamber 4 -->
+        <div class="royal-card reveal-on-scroll stagger-4">
+          <div class="royal-card-top">
+            <div class="royal-card-emblem">
+              <i class="fas fa-brain"></i>
+            </div>
+            <span class="royal-seal"><i class="fas fa-microchip"></i> Agentic Velocity</span>
+          </div>
+          <h3 class="royal-card-title">Agentic AI &amp; Executive Intelligence</h3>
+          <span class="royal-card-quote">"Unlocking the exponential velocity of AI-driven systems."</span>
+          <p class="royal-card-desc">
+            Transform manual back-office drag into autonomous agentic workflows. Integrating private vector embeddings, structured LLM tool-calling, and real-time streaming intelligence directly into your core business stack.
+          </p>
+          <ul class="royal-specs-list">
+            <li><i class="fas fa-gem"></i> Deterministic function calling with OpenAI, Claude &amp; Gemini</li>
+            <li><i class="fas fa-gem"></i> High-speed RAG and semantic knowledge base pipelines</li>
+            <li><i class="fas fa-gem"></i> Human-in-the-loop executive review and approval gates</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Luxury Sovereign Guarantee Banner -->
+      <div class="royal-guarantee-banner reveal-on-scroll stagger-5">
+        <div class="guarantee-content">
+          <h4 class="guarantee-title">
+            <i class="fas fa-crown text-gradient-gold"></i> The Royal Engineering Guarantee
+          </h4>
+          <p class="guarantee-subtitle">
+            Every collaboration adheres to transparent executive standards, full documentation, and zero technical compromises.
+          </p>
+          <div class="royal-hallmarks-grid">
+            <div class="hallmark-item">
+              <i class="fas fa-shield-check"></i>
+              <span>100% GitHub IP &amp; Code Ownership</span>
+            </div>
+            <div class="hallmark-item">
+              <i class="fas fa-user-check"></i>
+              <span>Direct Senior Partnership (No Junior Delegation)</span>
+            </div>
+            <div class="hallmark-item">
+              <i class="fas fa-calendar-check"></i>
+              <span>Guaranteed Weekly Milestones &amp; Live Demos</span>
+            </div>
+            <div class="hallmark-item">
+              <i class="fas fa-trophy"></i>
+              <span>Top 25% TestDome Verified Framework Mastery</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="guarantee-cta">
+          <a href="https://wa.me/919580980177?text=Hi%20Raman,%20I%20would%20like%20to%20commission%20a%20royal%20architecture%20project." target="_blank" class="btn btn-royal-gold">
+            <span>Commission Royal Architecture</span> <i class="fas fa-crown"></i>
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1283,10 +1918,12 @@ Looking to build an MVP, scale an existing platform, or eliminate technical debt
         <div class="footer-col">
           <h5>Navigation</h5>
           <ul class="footer-links">
+            <li><a href="#app-web-dev">Web &amp; App Dev Showcase</a></li>
+            <li><a href="#royal-standards">Royal Architecture Atelier</a></li>
             <li><a href="#services">Freelance Solutions</a></li>
             <li><a href="#case-studies">Production Case Studies</a></li>
             <li><a href="#proposal-generator">Instant Scope Estimator</a></li>
-            <li><a href="#copy-vault">Pitch & Copy Vault</a></li>
+            <li><a href="#copy-vault">Pitch &amp; Copy Vault</a></li>
             <li><a href="#credentials">Verified Badges</a></li>
           </ul>
         </div>
@@ -1314,30 +1951,32 @@ Looking to build an MVP, scale an existing platform, or eliminate technical debt
     </div>
   </footer>
 
-  <!-- Mobile App-Style Bottom Navigation Bar -->
-  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation Dock">
-    <a href="#hero" class="mobile-nav-item active" data-nav="hero">
-      <i class="fas fa-home"></i>
-      <span>Home</span>
-    </a>
-    <a href="#services" class="mobile-nav-item" data-nav="services">
-      <i class="fas fa-cubes"></i>
-      <span>Services</span>
-    </a>
-    <a href="#case-studies" class="mobile-nav-item" data-nav="case-studies">
-      <i class="fas fa-briefcase"></i>
-      <span>Projects</span>
-    </a>
-    <a href="#proposal-generator" class="mobile-nav-item" data-nav="proposal-generator">
-      <i class="fas fa-calculator"></i>
-      <span>Scope</span>
-    </a>
-    <a href="https://wa.me/919580980177?text=Hi%20Raman,%20I%20would%20like%20to%20discuss%20a%20project."
-      target="_blank" class="mobile-nav-item" data-nav="contact">
-      <i class="fab fa-whatsapp" style="color: var(--accent-emerald);"></i>
-      <span>Chat</span>
-    </a>
-  </nav>
+  <!-- iPhone-Style Floating Bottom Navigation Dock -->
+  <div class="iphone-dock-wrapper" id="iphoneDockWrapper">
+    <nav class="iphone-bottom-nav" aria-label="iOS Navigation Dock">
+      <a href="#hero" class="iphone-nav-tab active" data-nav="hero">
+        <div class="iphone-icon-wrap"><i class="fas fa-home"></i></div>
+        <span>Home</span>
+      </a>
+      <a href="#creation-studio" class="iphone-nav-tab" data-nav="creation-studio">
+        <div class="iphone-icon-wrap"><i class="fas fa-laptop-code"></i></div>
+        <span>Studio</span>
+      </a>
+      <a href="#app-web-dev" class="iphone-nav-tab" data-nav="app-web-dev">
+        <div class="iphone-icon-wrap"><i class="fas fa-mobile-screen"></i></div>
+        <span>Apps</span>
+      </a>
+      <a href="#services" class="iphone-nav-tab" data-nav="services">
+        <div class="iphone-icon-wrap"><i class="fas fa-cubes"></i></div>
+        <span>Services</span>
+      </a>
+      <a href="https://wa.me/919580980177?text=Hi%20Raman,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" class="iphone-nav-tab" data-nav="contact">
+        <div class="iphone-icon-wrap chat-icon"><i class="fab fa-whatsapp"></i></div>
+        <span>Chat</span>
+      </a>
+    </nav>
+    <div class="iphone-home-bar"></div>
+  </div>
 
   <!-- Toast Notification Container -->
   <div id="globalToast" class="toast"></div>

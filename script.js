@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initBottomMobileNav();
   initScrollAnimations();
+  initWebAppShowcase();
+  initPipelineStudio();
   initProjectFilters();
   initProposalEstimator();
   initCopyVault();
@@ -395,5 +397,374 @@ function initBottomMobileNav() {
       });
     }
   }, { passive: true });
+}
+
+/* ==========================================================================
+   11. INTERACTIVE WEB & APP DEVELOPMENT SHOWCASE CONTROLLER
+   ========================================================================== */
+function initWebAppShowcase() {
+  const showcaseSection = document.getElementById('app-web-dev');
+  if (!showcaseSection) return;
+
+  const tabBtns = document.querySelectorAll('.dev-tab-btn');
+  const featureCards = document.querySelectorAll('.dev-feature-card');
+  const mockupBrowser = document.getElementById('mockupBrowser');
+  const mockupPhone = document.getElementById('mockupPhone');
+  const chartBarsWrap = document.getElementById('chartBarsWrap');
+  const phoneNotification = document.getElementById('phoneNotification');
+  const stageWrapper = document.getElementById('devStageInteractive');
+
+  // Tab switching logic (Unified, Web Architecture, Cross-Platform Mobile)
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const mode = btn.getAttribute('data-mode');
+
+      // Adjust feature cards styling based on mode
+      featureCards.forEach(card => {
+        const feat = card.getAttribute('data-feature');
+        if (mode === 'all' || feat === mode || feat === 'all') {
+          card.style.opacity = '1';
+          card.classList.add('highlight');
+          setTimeout(() => card.classList.remove('highlight'), 1000);
+        } else {
+          card.style.opacity = '0.4';
+        }
+      });
+
+      // Adjust mockups emphasis based on mode
+      if (mode === 'web') {
+        if (mockupBrowser) {
+          mockupBrowser.style.zIndex = '5';
+          mockupBrowser.style.transform = 'scale(1.03) rotateY(0deg) rotateX(0deg)';
+          mockupBrowser.style.boxShadow = '0 30px 70px rgba(6, 182, 212, 0.35)';
+        }
+        if (mockupPhone) {
+          mockupPhone.style.zIndex = '3';
+          mockupPhone.style.transform = 'translateZ(20px) scale(0.92) translateY(20px)';
+          mockupPhone.style.opacity = '0.65';
+        }
+      } else if (mode === 'app') {
+        if (mockupPhone) {
+          mockupPhone.style.zIndex = '6';
+          mockupPhone.style.transform = 'translateZ(80px) scale(1.08) translateY(-10px)';
+          mockupPhone.style.opacity = '1';
+          mockupPhone.style.boxShadow = '0 35px 70px rgba(168, 85, 247, 0.45)';
+        }
+        if (mockupBrowser) {
+          mockupBrowser.style.zIndex = '2';
+          mockupBrowser.style.transform = 'scale(0.95) rotateY(-8deg)';
+          mockupBrowser.style.opacity = '0.6';
+        }
+      } else {
+        // Reset to all
+        if (mockupBrowser) {
+          mockupBrowser.style.zIndex = '2';
+          mockupBrowser.style.transform = '';
+          mockupBrowser.style.boxShadow = '';
+          mockupBrowser.style.opacity = '1';
+        }
+        if (mockupPhone) {
+          mockupPhone.style.zIndex = '4';
+          mockupPhone.style.transform = '';
+          mockupPhone.style.boxShadow = '';
+          mockupPhone.style.opacity = '1';
+        }
+      }
+    });
+  });
+
+  // Scroll Triggered Animations for Chart Bars, Notification, and Metrics Counter
+  let hasAnimatedOnScroll = false;
+
+  const showcaseObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasAnimatedOnScroll) {
+        hasAnimatedOnScroll = true;
+
+        // 1. Animate chart bars rising
+        if (chartBarsWrap) {
+          chartBarsWrap.classList.add('animate');
+        }
+
+        // 2. Animate phone notification slide-down
+        if (phoneNotification) {
+          setTimeout(() => {
+            phoneNotification.classList.add('is-active');
+          }, 450);
+        }
+
+        // 3. Animate metrics numbers
+        animateDevCounters();
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  showcaseObserver.observe(showcaseSection);
+
+  function animateDevCounters() {
+    const counterElements = showcaseSection.querySelectorAll('.dev-metric-num');
+    counterElements.forEach(el => {
+      const targetStr = el.getAttribute('data-counter');
+      if (!targetStr) return;
+
+      const targetVal = parseFloat(targetStr);
+      const isDecimal = targetStr.includes('.');
+      const isFps = el.textContent.includes('FPS');
+      const isPercent = el.textContent.includes('%');
+      const isMs = el.textContent.includes('ms');
+
+      let currentVal = 0;
+      const duration = 1400;
+      const startTime = performance.now();
+
+      function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const easeOutQuad = 1 - (1 - progress) * (1 - progress);
+
+        currentVal = easeOutQuad * targetVal;
+
+        let displayVal = isDecimal ? currentVal.toFixed(2) : Math.floor(currentVal);
+        if (isFps) {
+          el.textContent = `${displayVal} FPS`;
+        } else if (isPercent) {
+          el.textContent = `${displayVal}%`;
+        } else if (isMs) {
+          el.textContent = `< ${displayVal}ms`;
+        } else {
+          el.textContent = displayVal;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          // Final exact formatting
+          if (isFps) el.textContent = `${targetStr} FPS`;
+          else if (isPercent) el.textContent = `${targetStr}%`;
+          else if (isMs) el.textContent = `< ${targetStr}ms`;
+          else el.textContent = targetStr;
+        }
+      }
+
+      requestAnimationFrame(updateCounter);
+    });
+  }
+
+  // 3D Parallax Tilt Effect on Desktop Mouse Move
+  if (stageWrapper && window.innerWidth > 992) {
+    stageWrapper.addEventListener('mousemove', (e) => {
+      const rect = stageWrapper.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5; // -0.5 to 0.5
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+      const rotY = x * 14;
+      const rotX = -y * 12;
+
+      if (mockupBrowser && !mockupBrowser.style.transform.includes('scale')) {
+        mockupBrowser.style.transform = `rotateY(${rotY - 4}deg) rotateX(${rotX + 2}deg) translateY(-2px)`;
+      }
+
+      if (mockupPhone && !mockupPhone.style.transform.includes('scale')) {
+        mockupPhone.style.transform = `translateZ(60px) rotateY(${rotY * 1.4}deg) rotateX(${rotX * 1.2}deg) translateY(${y * 10}px)`;
+      }
+    });
+
+    stageWrapper.addEventListener('mouseleave', () => {
+      if (mockupBrowser && !mockupBrowser.style.transform.includes('scale')) {
+        mockupBrowser.style.transform = 'rotateY(-5deg) rotateX(3deg)';
+      }
+      if (mockupPhone && !mockupPhone.style.transform.includes('scale')) {
+        mockupPhone.style.transform = 'translateZ(50px) translateY(15px)';
+      }
+    });
+  }
+}
+
+/* ==========================================================================
+   10. 5-SECOND PIPELINE CREATION STUDIO (WEB, APP, SECURITY, MARKETING)
+   ========================================================================== */
+function initPipelineStudio() {
+  const studio = document.getElementById('creation-studio');
+  if (!studio) return;
+
+  const tabButtons = studio.querySelectorAll('.pipe-tab-btn');
+  const panels = studio.querySelectorAll('.pipeline-panel');
+  const timerFill = document.getElementById('pipelineTimerFill');
+
+  const modes = ['web', 'app', 'security', 'marketing'];
+  let currentIndex = 0;
+  const cycleDuration = 5000; // 5 seconds per discipline
+  let cycleStartTime = performance.now();
+  let animationFrameId = null;
+  let isUserInteracting = false;
+  let resumeTimeout = null;
+
+  function setPipeline(modeKey, resetTimer = true) {
+    const idx = modes.indexOf(modeKey);
+    if (idx !== -1) {
+      currentIndex = idx;
+    }
+
+    // Update tab buttons
+    tabButtons.forEach(btn => {
+      if (btn.getAttribute('data-pipeline') === modeKey) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    // Update panels
+    panels.forEach(panel => {
+      const panelId = panel.id.toLowerCase();
+      if (panelId.includes(modeKey)) {
+        panel.classList.add('active');
+      } else {
+        panel.classList.remove('active');
+      }
+    });
+
+    // Trigger internal stage micro-animations
+    triggerPanelMicroAnimations(modeKey);
+
+    if (resetTimer) {
+      cycleStartTime = performance.now();
+      if (timerFill) timerFill.style.width = '0%';
+    }
+  }
+
+  function triggerPanelMicroAnimations(modeKey) {
+    if (modeKey === 'web') {
+      const steps = studio.querySelectorAll('.evo-step');
+      steps.forEach((step, idx) => {
+        step.style.animation = 'none';
+        step.offsetHeight; // trigger reflow
+        step.style.animation = `subtlePulse 0.5s ease ${idx * 0.15}s forwards`;
+      });
+    } else if (modeKey === 'app') {
+      const screens = studio.querySelectorAll('.phone-mini-frame');
+      screens.forEach((scr, idx) => {
+        scr.style.animation = 'none';
+        scr.offsetHeight;
+        scr.style.animation = `subtlePulse 0.6s ease ${idx * 0.12}s forwards`;
+      });
+    } else if (modeKey === 'security') {
+      const radar = studio.querySelector('.radar-sweep');
+      if (radar) {
+        radar.style.animation = 'none';
+        radar.offsetHeight;
+        radar.style.animation = 'radarSweep 2s linear infinite';
+      }
+    } else if (modeKey === 'marketing') {
+      const bars = studio.querySelectorAll('.funnel-bar');
+      bars.forEach((bar, idx) => {
+        bar.style.transform = 'scaleX(0.7)';
+        setTimeout(() => {
+          bar.style.transform = 'scaleX(1)';
+        }, idx * 100);
+      });
+    }
+  }
+
+  function animateLoop(now) {
+    if (!isUserInteracting) {
+      const elapsed = now - cycleStartTime;
+      const progress = Math.min(elapsed / cycleDuration, 1);
+
+      if (timerFill) {
+        timerFill.style.width = `${progress * 100}%`;
+      }
+
+      if (progress >= 1) {
+        // Advance to next mode
+        currentIndex = (currentIndex + 1) % modes.length;
+        setPipeline(modes[currentIndex], true);
+      }
+    }
+
+    animationFrameId = requestAnimationFrame(animateLoop);
+  }
+
+  // Click handling on tabs
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetMode = btn.getAttribute('data-pipeline');
+      if (!targetMode) return;
+
+      isUserInteracting = true;
+      setPipeline(targetMode, true);
+
+      clearTimeout(resumeTimeout);
+      resumeTimeout = setTimeout(() => {
+        isUserInteracting = false;
+        cycleStartTime = performance.now();
+      }, 4000);
+    });
+  });
+
+  // Pause on hover, resume on mouse leave
+  studio.addEventListener('mouseenter', () => {
+    isUserInteracting = true;
+  });
+
+  studio.addEventListener('mouseleave', () => {
+    isUserInteracting = false;
+    cycleStartTime = performance.now();
+  });
+
+  // Start initial state
+  setPipeline(modes[0], true);
+  animationFrameId = requestAnimationFrame(animateLoop);
+}
+
+/* ==========================================================================
+   11. IPHONE-STYLE FLOATING BOTTOM DOCK NAVIGATION
+   ========================================================================== */
+function initBottomMobileNav() {
+  const tabs = document.querySelectorAll('.iphone-nav-tab');
+  if (!tabs.length) return;
+
+  const sections = [
+    { id: 'hero', element: document.getElementById('hero') },
+    { id: 'creation-studio', element: document.getElementById('creation-studio') },
+    { id: 'app-web-dev', element: document.getElementById('app-web-dev') },
+    { id: 'services', element: document.getElementById('services') }
+  ].filter(sec => sec.element !== null);
+
+  window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY + 200;
+
+    let currentSectionId = 'hero';
+    for (let i = 0; i < sections.length; i++) {
+      const sec = sections[i];
+      const top = sec.element.offsetTop;
+      const height = sec.element.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        currentSectionId = sec.id;
+        break;
+      }
+    }
+
+    tabs.forEach(tab => {
+      const tabTarget = tab.getAttribute('data-nav');
+      if (tabTarget === currentSectionId) {
+        tab.classList.add('active');
+      } else if (tabTarget !== 'contact') {
+        tab.classList.remove('active');
+      }
+    });
+  }, { passive: true });
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
 }
 

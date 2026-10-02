@@ -9,13 +9,17 @@
 
   <!-- Animated Typing SVG for Core Skills & Experience -->
   <a href="https://www.linkedin.com/in/raman-tiwari/">
-    <img width="100%" style="max-width:720px" src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=19&duration=2400&pause=800&color=00F2FE&center=true&vCenter=true&width=720&lines=Fullstack+Dev+%40+Infiniti+Tech+Solution;Architecting+Govt+Portals%2C+AI+Systems+%26+ERP+Platforms;Shipped+for+Parle%2C+Amity+University+%26+Global+Govts;Top+25%25+TestDome+Certified+Laravel+Engineer;Building+systems+that+scale+to+millions+of+users" alt="Skills Typing Animation" />
+    <img width="100%" style="max-width:720px" src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=19&duration=2400&pause=800&color=00F2FE&center=true&vCenter=true&width=720&lines=Fullstack+Dev+%40+Infiniti+Tech+Solution;Web+%26+Cross-Platform+Mobile+App+Engineer;Architecting+Govt+Portals%2C+AI+Systems+%26+ERP+Platforms;Shipped+for+Parle%2C+Amity+University+%26+Global+Govts;Top+25%25+TestDome+Certified+Laravel+Engineer;Building+systems+that+scale+to+millions+of+users" alt="Skills Typing Animation" />
   </a>
 
   <br/>
 
   <!-- High-Trust Social & Contact Badges -->
   <p align="center">
+    <a href="https://raman-tiwari.vercel.app/" target="_blank">
+      <img src="https://img.shields.io/badge/Live%20Portfolio-raman--tiwari.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=00F2FE" alt="Live Portfolio on Vercel"/>
+    </a>
+    &nbsp;
     <a href="https://www.linkedin.com/in/raman-tiwari/" target="_blank">
       <img src="https://img.shields.io/badge/LinkedIn-Connect%20%E2%86%92-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
     </a>
@@ -47,17 +51,20 @@
 
 ### 🧬 The TL;DR (Who I Am)
 
-Hey! I’m **Revatiraman Tiwari** (known as **Raman**). I'm a **Fullstack Software Engineer** with **6+ years of production experience** designing, scaling, and shipping mission-critical systems. 
+Hey! I’m **Revatiraman Tiwari** (known as **Raman**). I'm a **Fullstack Software Engineer** with **6+ years of production experience** designing, scaling, and shipping mission-critical web applications and cross-platform mobile apps. 
 
 I've engineered platforms for **national governments** (Police firearms licensing, social security, consumer affairs), **prestigious universities** (Amity, Manav Rachna, DIT), **enterprise FMCG icons** ([Parle Products](https://www.parleproducts.com/), [Cooke & Kelvey](https://www.cookeandkelvey.com/)), and high-throughput **Fintech & AI platforms**.
 
+* 🌐 **Live Portfolio & Interactive Architecture Showcase:** [https://raman-tiwari.vercel.app/](https://raman-tiwari.vercel.app/)
+* 📱 **Web & Mobile App Showcase:** [https://raman-tiwari.vercel.app/#app-web-dev](https://raman-tiwari.vercel.app/#app-web-dev)
+
 ```bash
-raman@portfolio:~$ curl -s https://api.ramantiwari.dev/profile
+raman@portfolio:~$ curl -s https://raman-tiwari.vercel.app/api/status
 {
   "name": "Revatiraman Tiwari (Raman Tiwari)",
   "title": "Fullstack Developer @ Infiniti Tech Solution",
   "verified_credentials": ["TestDome Top 25% Laravel", "IBM Data Science Level 2", "CockroachDB Distributed SQL"],
-  "core_stack": ["Laravel", "PHP 8+", "React", "Node.js", "MySQL", "AWS", "Agentic AI"],
+  "core_stack": ["Laravel 6-12", "React 19 / Next.js", "React Native", "Redis", "MySQL", "AWS", "Agentic AI"],
   "production_footprint": ["Government Portals", "FMCG Giants", "Universities", "Fintech Engines"],
   "philosophy": "Clean architecture beats clever hacks. Always."
 }
