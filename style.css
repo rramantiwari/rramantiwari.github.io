@@ -1164,17 +1164,18 @@ code, pre {
 .section-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.3rem 0.8rem;
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  color: var(--accent-indigo);
+  gap: 0.45rem;
+  padding: 0.35rem 0.95rem;
+  background: rgba(217, 119, 6, 0.08);
+  border: 1.5px solid rgba(212, 175, 55, 0.35);
+  color: var(--royal-gold);
   border-radius: var(--radius-full);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.08);
 }
 
 .section-title {
@@ -2436,32 +2437,39 @@ code, pre {
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
+  background: #ffffff;
+  padding: 5px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid rgba(212, 175, 55, 0.32);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
 }
 
 .filter-btn {
-  padding: 0.55rem 1.2rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  padding: 0.6rem 1.35rem;
+  background: transparent;
+  border: none;
   border-radius: var(--radius-full);
   color: var(--text-secondary);
   font-family: var(--font-sans);
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: 0.86rem;
+  font-weight: 700;
   cursor: pointer;
   transition: var(--transition-smooth);
 }
 
 .filter-btn:hover {
   color: var(--text-primary);
-  border-color: var(--border-glow);
+  background: rgba(212, 175, 55, 0.08);
 }
 
 .filter-btn.active {
-  background: var(--accent-cyan);
-  color: #07090e;
-  border-color: var(--accent-cyan);
-  box-shadow: 0 2px 15px rgba(0, 242, 254, 0.35);
+  background: var(--gradient-primary);
+  color: #ffffff !important;
+  box-shadow: 0 4px 18px rgba(217, 119, 6, 0.35);
 }
 
 .projects-grid {
@@ -2471,8 +2479,8 @@ code, pre {
 }
 
 .project-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: #ffffff;
+  border: 1.5px solid rgba(212, 175, 55, 0.28);
   border-radius: var(--radius-lg);
   padding: 2.25rem;
   transition: var(--transition-smooth);
@@ -2480,12 +2488,13 @@ code, pre {
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: var(--border-glow);
-  box-shadow: var(--shadow-card), 0 0 30px rgba(0, 242, 254, 0.12);
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.16);
 }
 
 .project-top-row {
@@ -2498,26 +2507,27 @@ code, pre {
 
 .project-category-pill {
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 0.25rem 0.75rem;
+  padding: 0.3rem 0.85rem;
   border-radius: var(--radius-full);
-  background: rgba(99, 102, 241, 0.1);
-  color: var(--accent-indigo);
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  background: rgba(217, 119, 6, 0.1);
+  color: var(--royal-gold);
+  border: 1px solid rgba(212, 175, 55, 0.32);
 }
 
 .project-title {
   font-size: 1.45rem;
   font-weight: 800;
-  margin-bottom: 0.25rem;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
 }
 
 .project-client {
-  font-size: 0.85rem;
-  color: var(--accent-cyan);
-  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--royal-gold);
+  font-weight: 700;
   margin-bottom: 1.25rem;
 }
 
