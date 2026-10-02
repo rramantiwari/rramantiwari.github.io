@@ -545,207 +545,31 @@ function initWebAppShowcase() {
 }
 
 /* ==========================================================================
-   10. 5-SECOND PIPELINE CREATION STUDIO (WEB, APP, SECURITY, MARKETING)
+   10. SYNCHRONOUS 4-ENGINE MATRIX (WEB, APP, SECURITY, GROWTH)
    ========================================================================== */
 function initPipelineStudio() {
   const studio = document.getElementById('creation-studio');
   if (!studio) return;
 
-  const tabButtons = studio.querySelectorAll('.pipe-tab-btn');
-  const panels = studio.querySelectorAll('.pipeline-panel');
-  const timerFill = document.getElementById('pipelineTimerFill');
+  const cards = studio.querySelectorAll('.hero-sync-card');
+  if (!cards.length) return;
 
-  const modes = ['web', 'app', 'security', 'marketing'];
-  let currentIndex = 0;
-  const cycleDuration = 5000; // 5 seconds per discipline
-  let cycleStartTime = performance.now();
-  let animationFrameId = null;
-  let isUserInteracting = false;
-  let resumeTimeout = null;
-
-  function setPipeline(modeKey, resetTimer = true) {
-    const idx = modes.indexOf(modeKey);
-    if (idx !== -1) {
-      currentIndex = idx;
-    }
-
-    // Update tab buttons
-    tabButtons.forEach(btn => {
-      if (btn.getAttribute('data-pipeline') === modeKey) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-
-    // Update panels
-    panels.forEach(panel => {
-      const panelId = panel.id.toLowerCase();
-      if (panelId.includes(modeKey)) {
-        panel.classList.add('active');
-      } else {
-        panel.classList.remove('active');
-      }
-    });
-
-    // Trigger internal stage micro-animations
-    triggerPanelMicroAnimations(modeKey);
-
-    if (resetTimer) {
-      cycleStartTime = performance.now();
-      if (timerFill) timerFill.style.width = '0%';
-    }
-  }
-
-  let webStageTimeout1 = null;
-  let webStageTimeout2 = null;
-  let webStageTimeout3 = null;
-
-  function triggerPanelMicroAnimations(modeKey) {
-    if (modeKey === 'web') {
-      const stageLabel = document.getElementById('webStageLabel');
-      const cursor = document.getElementById('creationCursor');
-      const cards = studio.querySelectorAll('.c-live-card');
-      const headline = studio.querySelector('.c-headline-bar');
-      const hud = studio.querySelector('.creation-code-hud');
-
-      clearTimeout(webStageTimeout1);
-      clearTimeout(webStageTimeout2);
-      clearTimeout(webStageTimeout3);
-
-      // Phase 1: Drafting Wireframe (0s)
-      if (stageLabel) stageLabel.textContent = '1. Drafting Wireframe...';
-      if (cursor) {
-        cursor.style.transform = 'translate(20px, 10px)';
-        const cursorTag = cursor.querySelector('.cursor-tag');
-        if (cursorTag) cursorTag.textContent = 'Drafting...';
-      }
-      if (headline) headline.style.background = 'rgba(255,255,255,0.18)';
-      cards.forEach(card => {
-        card.style.opacity = '0.45';
-        card.style.transform = 'scale(0.97)';
+  // Add subtle interactive tilt/hover dynamics
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      cards.forEach(c => {
+        if (c !== card) c.style.opacity = '0.78';
       });
+    });
 
-      // Phase 2: Styling UI (1.4s)
-      webStageTimeout1 = setTimeout(() => {
-        if (stageLabel) stageLabel.textContent = '2. Styling UI & Layout...';
-        if (cursor) {
-          cursor.style.transform = 'translate(140px, 45px)';
-          const cursorTag = cursor.querySelector('.cursor-tag');
-          if (cursorTag) cursorTag.textContent = 'Styling UI...';
-        }
-        if (headline) headline.style.background = 'linear-gradient(90deg, #fde68a 0%, #e5c07b 50%, #b45309 100%)';
-        cards.forEach((card, idx) => {
-          setTimeout(() => {
-            card.style.opacity = '0.85';
-            card.style.transform = 'scale(1) translateY(-2px)';
-          }, idx * 100);
-        });
-      }, 1400);
-
-      // Phase 3: Code Compilation (2.8s)
-      webStageTimeout2 = setTimeout(() => {
-        if (stageLabel) stageLabel.textContent = '3. Compiling Code Engine...';
-        if (cursor) {
-          cursor.style.transform = 'translate(80px, 90px)';
-          const cursorTag = cursor.querySelector('.cursor-tag');
-          if (cursorTag) cursorTag.textContent = 'Deploying...';
-        }
-        if (hud) {
-          hud.style.boxShadow = '0 0 15px rgba(229, 192, 123, 0.5)';
-        }
-      }, 2800);
-
-      // Phase 4: Production Live (3.9s)
-      webStageTimeout3 = setTimeout(() => {
-        if (stageLabel) stageLabel.textContent = '4. Live SaaS Online (0.4s Fast)';
-        if (cursor) {
-          cursor.style.transform = 'translate(190px, 20px)';
-          const cursorTag = cursor.querySelector('.cursor-tag');
-          if (cursorTag) cursorTag.textContent = '100% Ready';
-        }
-        cards.forEach(card => {
-          card.style.opacity = '1';
-          card.style.transform = 'none';
-        });
-      }, 3900);
-
-    } else if (modeKey === 'app') {
-      const bars = studio.querySelectorAll('.spark-bar');
-      const heights = ['40%', '65%', '85%', '50%', '95%', '70%', '100%'];
-      bars.forEach((bar, idx) => {
-        bar.style.height = '15%';
-        setTimeout(() => {
-          bar.style.height = heights[idx % heights.length];
-        }, 150 + idx * 80);
+    card.addEventListener('mouseleave', () => {
+      cards.forEach(c => {
+        c.style.opacity = '1';
       });
-    } else if (modeKey === 'security') {
-      const sweep = studio.querySelector('.rc-sweep-laser');
-      if (sweep) {
-        sweep.style.animation = 'none';
-        sweep.offsetHeight;
-        sweep.style.animation = 'radarSweep 2.5s linear infinite';
-      }
-    } else if (modeKey === 'marketing') {
-      const path = studio.querySelector('.growth-path');
-      if (path) {
-        path.style.animation = 'none';
-        path.offsetHeight;
-        path.style.animation = 'drawCurve 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards';
-      }
-    }
-  }
-
-  function animateLoop(now) {
-    if (!isUserInteracting) {
-      const elapsed = now - cycleStartTime;
-      const progress = Math.min(elapsed / cycleDuration, 1);
-
-      if (timerFill) {
-        timerFill.style.width = `${progress * 100}%`;
-      }
-
-      if (progress >= 1) {
-        // Advance to next mode
-        currentIndex = (currentIndex + 1) % modes.length;
-        setPipeline(modes[currentIndex], true);
-      }
-    }
-
-    animationFrameId = requestAnimationFrame(animateLoop);
-  }
-
-  // Click handling on tabs
-  tabButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetMode = btn.getAttribute('data-pipeline');
-      if (!targetMode) return;
-
-      isUserInteracting = true;
-      setPipeline(targetMode, true);
-
-      clearTimeout(resumeTimeout);
-      resumeTimeout = setTimeout(() => {
-        isUserInteracting = false;
-        cycleStartTime = performance.now();
-      }, 4000);
     });
   });
-
-  // Pause on hover, resume on mouse leave
-  studio.addEventListener('mouseenter', () => {
-    isUserInteracting = true;
-  });
-
-  studio.addEventListener('mouseleave', () => {
-    isUserInteracting = false;
-    cycleStartTime = performance.now();
-  });
-
-  // Start initial state
-  setPipeline(modes[0], true);
-  animationFrameId = requestAnimationFrame(animateLoop);
 }
+
 
 /* ==========================================================================
    11. IPHONE-STYLE FLOATING BOTTOM DOCK NAVIGATION
