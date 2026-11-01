@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initWebAppShowcase();
   initPipelineStudio();
   initProjectFilters();
+  initProductShowcase();
   initProposalEstimator();
   initCopyVault();
   initContactForm();
@@ -617,3 +618,36 @@ function initBottomMobileNav() {
   });
 }
 
+
+/* ==========================================================================
+   FLAGSHIP PRODUCTS SHOWCASE (TABS)
+   ========================================================================== */
+function initProductShowcase() {
+  const tabs = Array.from(document.querySelectorAll('.product-tab'));
+  if (!tabs.length) return;
+
+  const activate = (tab, focus) => {
+    tabs.forEach(t => {
+      const selected = t === tab;
+      const panel = document.getElementById(t.getAttribute('aria-controls'));
+      t.classList.toggle('active', selected);
+      t.setAttribute('aria-selected', selected);
+      t.tabIndex = selected ? 0 : -1;
+      if (panel) {
+        panel.hidden = !selected;
+        panel.classList.toggle('active', selected);
+      }
+    });
+    if (focus) tab.focus();
+  };
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => activate(tab, false));
+    tab.addEventListener('keydown', e => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      const step = e.key === 'ArrowRight' ? 1 : -1;
+      activate(tabs[(i + step + tabs.length) % tabs.length], true);
+    });
+  });
+}
